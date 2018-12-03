@@ -23,10 +23,19 @@ a {
   text-align: center;
   font-size: 2rem;
   background-color: white;
+  position: relative;
+  box-shadow:  0 3px 5px 0 rgba(0, 0, 0, 0.2),
+               0 1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo-up {
-  
+  top: -63px;
+  transition: top .2s;
+}
+
+.logo-down {
+  top: 0;
+  transition: top .2s;
 }
 
 .nav {
@@ -75,7 +84,8 @@ a {
   transition: opacity .2s;
 }
 section {
-  padding-top: 127px;
+  padding: 127px 30px 0 30px;
+  border-left: 1px solid black;
 }
 article {
   width: 100%;

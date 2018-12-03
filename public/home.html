@@ -67,7 +67,7 @@ crossorigin="anonymous"></script>
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
-    var navbarHeight = $("logo").outerHeight();
+    var navbarHeight = $("header").outerHeight();
 
     $(window).scroll(function(event) {
       didScroll = true;
@@ -83,19 +83,19 @@ crossorigin="anonymous"></script>
     function hasScrolled() {
       var st = $(this).scrollTop();
 
-      if (Math.abs(lastScrollTop-st) <= delta)
+      if (Math.abs(lastScrollTop - st) <= delta)
         return;
 
       if (st > lastScrollTop && st > navbarHeight) {
-        $("logo").removeClass("logo-down").addClass("logo-up");
+        $("header").removeClass("logo-down").addClass("logo-up");
       } else {
         if(st + $(window).height() < $(document).height()) {
-          $("logo").removeClass("logo-up").addClass("logo-down");
+          $("header").removeClass("logo-up").addClass("logo-down");
         }
       }
       lastScrollTop = st;
     }
-  })
+  });
 </script>
   </body>
 </html>
