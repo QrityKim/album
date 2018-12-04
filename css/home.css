@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background-image: url("../img/mainbg.png");
+  background-attachment: fixed;
 }
 
 header {
@@ -15,21 +17,10 @@ ul {
 
 a {
   text-decoration: none;
-
-}
-
-.logo {
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 2rem;
-  background-color: white;
-  position: relative;
-  box-shadow:  0 3px 5px 0 rgba(0, 0, 0, 0.2),
-               0 1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo-up {
-  top: -63px;
+  top: -120px;
   transition: top .2s;
 }
 
@@ -38,55 +29,96 @@ a {
   transition: top .2s;
 }
 
+.nav.logo-up {
+
+}
+
 .nav {
+  margin-top: 60px;
   width: 100%;
   height: 60px;
-  background-color: gray;
 }
 
 .nav .nav-container {
   margin: 0 auto;
   height: 60px;
   max-width: 400px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .nav .nav-container .nav-item {
   /* line-height: 60px; */
-  padding: 18px 0;
+  padding: 18px;
+  width: 50px;
+  text-align: center;
   display: inline-block;
-  margin-left: 30px;
+  margin: 0 auto;
+  background-color: rgba(136, 176, 197, 0.6);
 }
 
 .nav .nav-container .nav-item:hover {
   /* background-color: gray; */
-}
-
-.nav-item .menu a, .nav-item .submenu a{
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.nav-item:hover .menu a, .nav-item .submenu li:hover a{
-  color: rgba(255, 255, 255, 1);
-  transition: color .2s;
-}
-
-.nav .nav-container .nav-item .submenu {
-  position: absolute;
-  top: 127px;
-  margin: 0;
-  padding: 0 0 10px 10px;
-  background-color: gray;
-  opacity: 0;
+  background-color: rgba(136, 176, 197, 0.8);
+  transition: background-color .2s;
 }
 
 .nav-container .nav-item:hover ul#subid {
   opacity: 1;
   transition: opacity .2s;
 }
+
 section {
-  padding: 127px 30px 0 30px;
+  margin: 200px 0 100px 0;
+  padding: 0px 30px 0 30px;
   border-left: 1px solid black;
 }
-article {
-  width: 100%;
+
+.gallery {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.slide-container {
+  display: flex;
+}
+
+.slides {
+  padding: 5px;
+}
+
+.slides img {
+  vertical-align: bottom;
+}
+
+.slide-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.slide-control:focus {
+  outline: none;
+}
+
+.slide-control.prev {
+  left: 0;
+}
+
+.slide-control.next {
+  right: 0;
+}
+
+.slide-control.disabled {
+  opacity: 0.5;
 }

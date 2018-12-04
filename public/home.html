@@ -8,94 +8,94 @@
   <body>
     <div id="wrap">
       <header>
-        <div class="logo">Album</div>
         <div class="nav">
           <div class="nav-container">
             <div class="nav-item">
               <div class="menu">
                 <a href="#">GPU</a><i class="al al-down"></i>
               </div>
-              <ul class="submenu" id="subid">
-                <li><a href="#">rtx2080</a></li>
-              </ul>
             </div>
             <div class="nav-item">
               <div class="menu">
                 <a href="#">CPU</a><i class="al al-down"></i>
               </div>
-              <ul class="submenu" id="subid">
-                <li><a href="#">i7-7700k</a></li>
-              </ul>
             </div>
             <div class="nav-item">
               <div class="menu">
                 <a href="#">M/B</a><i class="al al-down"></i>
               </div>
-              <ul class="submenu" id="subid">
-                <li><a href="#">asus</a></li>
-              </ul>
             </div>
             <div class="nav-item">
               <div class="menu">
                 <a href="#">PSU</a><i class="al al-down"></i>
               </div>
-              <ul class="submenu" id="subid">
-                <li><a href="#">pw</a></li>
-              </ul>
             </div>
           </div>
         </div>
       </header>
       <section>
-        <article class="gallery">
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-
-
-            </p>
+        <div class="gallery">
+          <div class="slide-container">
+            <div class="slides">
+              <img src="../img/rtx2080.jpg" alt="">
+            </div>
+            <div class="slides">
+              <img src="../img/rtx2080.jpg" alt="">
+            </div>
           </div>
-        </article>
+          <button class="slide-control prev">&laquo;</button>
+          <button class="slide-control next">&raquo;</button>
+        </div>
+        <div class="gallery">
+          <div class="slide-container">
+            <div class="slides">
+              <img src="../img/rtx2080.jpg" alt="">
+            </div>
+            <div class="slides">
+              <img src="../img/rtx2080.jpg" alt="">
+            </div>
+          </div>
+          <button class="slide-control prev">&laquo;</button>
+          <button class="slide-control next">&raquo;</button>
+        </div>
       </section>
     </div>
-    <script
-src="https://code.jquery.com/jquery-3.3.1.js"
-integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-crossorigin="anonymous"></script>
-<script type="text/javascript">
-  $(function() {
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
-    var navbarHeight = $("header").outerHeight();
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="../src/accordion.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $("header").outerHeight();
 
-    $(window).scroll(function(event) {
-      didScroll = true;
-    });
+      $(window).scroll(function(event) {
+        didScroll = true;
+      });
 
-    setInterval(function() {
-      if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-      }
-    }, 250);
-
-    function hasScrolled() {
-      var st = $(this).scrollTop();
-
-      if (Math.abs(lastScrollTop - st) <= delta)
-        return;
-
-      if (st > lastScrollTop && st > navbarHeight) {
-        $("header").removeClass("logo-down").addClass("logo-up");
-      } else {
-        if(st + $(window).height() < $(document).height()) {
-          $("header").removeClass("logo-up").addClass("logo-down");
+      setInterval(function() {
+        if (didScroll) {
+          hasScrolled();
+          didScroll = false;
         }
+      }, 250);
+
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        if (Math.abs(lastScrollTop - st) <= delta)
+          return;
+
+        if (st > lastScrollTop && st > navbarHeight) {
+          $("header").removeClass("logo-down").addClass("logo-up");
+        } else {
+          if(st + $(window).height() < $(document).height()) {
+            $("header").removeClass("logo-up").addClass("logo-down");
+          }
+        }
+        lastScrollTop = st;
       }
-      lastScrollTop = st;
-    }
-  });
-</script>
+    });
+    </script>
   </body>
 </html>
