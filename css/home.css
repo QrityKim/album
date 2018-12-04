@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
 body {
   margin: 0;
   background-image: url("../img/mainbg.png");
@@ -9,6 +11,7 @@ header {
   position: fixed;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 ul {
@@ -17,6 +20,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .logo-up {
@@ -26,15 +30,11 @@ a {
 
 .logo-down {
   top: 0;
+  background-color: white;
   transition: top .2s;
 }
 
-.nav.logo-up {
-
-}
-
 .nav {
-  margin-top: 60px;
   width: 100%;
   height: 60px;
 }
@@ -50,19 +50,25 @@ a {
 }
 
 .nav .nav-container .nav-item {
-  /* line-height: 60px; */
-  padding: 18px;
+  line-height: 40px;
+  padding: 0px 18px;
+  height: 40px;
   width: 50px;
   text-align: center;
   display: inline-block;
-  margin: 0 auto;
-  background-color: rgba(136, 176, 197, 0.6);
+  margin: 10px auto;
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color:#3d3f62;
+  transition: background-color .2s;
+  border-radius: 5px;
+}
+
+.nav .nav-container .nav-item a {
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .nav .nav-container .nav-item:hover {
   /* background-color: gray; */
-  background-color: rgba(136, 176, 197, 0.8);
-  transition: background-color .2s;
 }
 
 .nav-container .nav-item:hover ul#subid {
@@ -71,42 +77,50 @@ a {
 }
 
 section {
-  margin: 200px 0 100px 0;
-  padding: 0px 30px 0 30px;
+  margin: 0px 0 100px 0;
+  padding: 0;
   border-left: 1px solid black;
 }
 
 .gallery {
+  padding: 0;
   position: relative;
   margin: 0 auto;
-  overflow: hidden;
-  opacity: 0;
+  overflow: visible;
+  border-top: 1px solid black;
 }
 
 .slide-container {
-  display: flex;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
 .slides {
-  padding: 5px;
+  display: none;
 }
 
 .slides img {
+  width: 100%;
   vertical-align: bottom;
 }
 
-.slide-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2em;
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  z-index: 99;
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 .slide-control:focus {
   outline: none;
 }

@@ -32,31 +32,18 @@
             </div>
           </div>
         </div>
+
       </header>
       <section>
-        <div class="gallery">
+        <div id="g-1" class="gallery">
           <div class="slide-container">
-            <div class="slides">
+            <div class="slides fade">
               <img src="../img/rtx2080.jpg" alt="">
             </div>
-            <div class="slides">
+            <div class="slides fade">
               <img src="../img/rtx2080.jpg" alt="">
             </div>
           </div>
-          <button class="slide-control prev">&laquo;</button>
-          <button class="slide-control next">&raquo;</button>
-        </div>
-        <div class="gallery">
-          <div class="slide-container">
-            <div class="slides">
-              <img src="../img/rtx2080.jpg" alt="">
-            </div>
-            <div class="slides">
-              <img src="../img/rtx2080.jpg" alt="">
-            </div>
-          </div>
-          <button class="slide-control prev">&laquo;</button>
-          <button class="slide-control next">&raquo;</button>
         </div>
       </section>
     </div>
@@ -64,37 +51,49 @@
     <script src="../src/accordion.js"></script>
     <script type="text/javascript">
     $(function() {
-      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var navbarHeight = $("header").outerHeight();
+      // var didScroll;
+      // var lastScrollTop = 0;
+      // var delta = 5;
+      // var navbarHeight = $("header").outerHeight();
 
-      $(window).scroll(function(event) {
-        didScroll = true;
-      });
+      // $(window).scroll(function(event) {
+      //   didScroll = true;
+      // });
 
-      setInterval(function() {
-        if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-        }
-      }, 250);
+      // setInterval(function() {
+      //   if (didScroll) {
+      //     hasScrolled();
+      //     didScroll = false;
+      //   }
+      // }, 100);
 
-      function hasScrolled() {
-        var st = $(this).scrollTop();
+      // function hasScrolled() {
+      //   var st = $(this).scrollTop();
 
-        if (Math.abs(lastScrollTop - st) <= delta)
-          return;
+      //   if (Math.abs(lastScrollTop - st) <= delta)
+      //     return;
 
-        if (st > lastScrollTop && st > navbarHeight) {
-          $("header").removeClass("logo-down").addClass("logo-up");
+      //   if (st > lastScrollTop && st > navbarHeight) {
+      //     $("header").removeClass("logo-down").addClass("logo-up");
+      //   } else {
+      //     if(st + $(window).height() < $(document).height()) {
+      //       $("header").removeClass("logo-up").addClass("logo-down");
+      //     }
+      //   }
+      //   lastScrollTop = st;
+      // }
+
+      $(window).scroll(function() {
+        var $sc = $("header");
+
+        if($(this).scrollTop() >= 400) {
+          $sc.addClass("logo-up");
+          $sc.removeClass("logo-down");
         } else {
-          if(st + $(window).height() < $(document).height()) {
-            $("header").removeClass("logo-up").addClass("logo-down");
-          }
+          $sc.addClass("logo-down");
+          $sc.removeClass("logo-up");
         }
-        lastScrollTop = st;
-      }
+      })
     });
     </script>
   </body>
